@@ -1,4 +1,6 @@
+import br.com.dio.desafio.dominio.Bootcamp;
 import br.com.dio.desafio.dominio.Curso;
+import br.com.dio.desafio.dominio.Dev;
 import br.com.dio.desafio.dominio.Mentoria;
 
 import java.time.LocalDate;
@@ -23,6 +25,49 @@ public class Main{
 
         System.out.println(curso1.toString() + curso2.toString());
         System.out.println(mentoria);
+
+        Bootcamp bootcamp = new Bootcamp();
+        bootcamp.setNome("Bootcamp Java Developer");
+        bootcamp.setDescricao("Descricao bootcamp java");
+        bootcamp.getConteudos().add(curso1);
+        bootcamp.getConteudos().add(curso2);
+        bootcamp.getConteudos().add(mentoria);
+
+        Dev devDavi = new Dev();
+        devDavi.setNome("Davi");
+        devDavi.inscreverBootcamp(bootcamp);
+        System.out.println("Conteudos Inscritos Davi:" + devDavi.getConteudoInscritos());
+        devDavi.progredir();
+        devDavi.progredir();
+        System.out.println("-");
+        System.out.println("Conteudos Concluidos Davi:" + devDavi.getConteudosConcluidos());
+        System.out.println("====================");
+        System.out.println("XP:" + devDavi.calcularTotalXp());
+        System.out.println("====================");
+
+        Dev devFelipe = new Dev();
+        devFelipe.setNome("Felipe");
+        devFelipe.inscreverBootcamp(bootcamp);
+        System.out.println("Conteudos Inscritos Felipe:" + devFelipe.getConteudoInscritos());
+        devFelipe.progredir();
+        System.out.println("-");
+        System.out.println("Conteudos Concluidos Felipe:" + devFelipe.getConteudosConcluidos());
+        System.out.println("====================");
+        System.out.println("XP:" + devFelipe.calcularTotalXp());
+        System.out.println("====================");
+
+        Dev devBruna = new Dev();
+        devBruna.setNome("Bruna");
+        devBruna.inscreverBootcamp(bootcamp);
+        System.out.println("Conteudos Inscritos Bruna:" + devBruna.getConteudoInscritos());
+        devBruna.progredir();
+        devBruna.progredir();
+        devBruna.progredir();
+        System.out.println("-");
+        System.out.println("Conteudos Concluidos Bruna:" + devBruna.getConteudosConcluidos());
+        System.out.println("====================");
+        System.out.println("XP:" + devBruna.calcularTotalXp());
+        System.out.println("====================");
     }
 
 }
